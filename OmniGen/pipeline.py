@@ -72,6 +72,10 @@ class OmniGenPipeline:
 
     @classmethod
     def from_pretrained(cls, model_name, vae_path: str=None):
+        print(f"current dir {os.getcwd() }")
+        print(f"Exist {model_name} {os.path.exists(model_name)}")
+        print(f"Exist {os.path.join(model_name, 'model.safetensors')} os.path.exists(os.path.join(model_name, 'model.safetensors'))")
+        
         if not os.path.exists(model_name) or (not os.path.exists(os.path.join(model_name, 'model.safetensors')) and model_name == "Shitao/OmniGen-v1"):
             # logger.info("Model not found, downloading...")
             print("Model not found, downloading...")
